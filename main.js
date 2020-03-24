@@ -3,6 +3,7 @@ const router = require('koa-router')();
 const bodyparser = require('koa-bodyparser');
 const views = require('koa-views');
 const path = require('path');
+const static = require('koa-static');
 const api = require('./route/api');
 const config = require('./config');
 const IPv4Util = require('./util/IPv4_util');
@@ -13,6 +14,9 @@ const app = new Koa();
 const port = config.port || '3000';
 
 app.use(bodyparser());
+
+// 配置静态web服务的中间件
+app.use(static(path.join(__dirname, './static')));
 
 app.use(views(path.join(__dirname, './view'), {
   extension: 'ejs'
