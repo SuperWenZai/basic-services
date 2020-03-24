@@ -4,8 +4,9 @@
   "description": "This is a service built with KOA！",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon main.js"
+    "test": "NODE_ENV=test echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon main.js",
+    "confirmLog": "nodemon util/logPath_util.js"
   },
   "keywords": [],
   "author": "arwenfang",
@@ -17,7 +18,8 @@
     "koa-cors": "^0.0.16",
     "koa-router": "^8.0.8",
     "koa-static": "^5.0.0",
-    "koa-views": "^6.2.1"
+    "koa-views": "^6.2.1",
+    "log4js": "^6.1.2"
   },
   "devDependencies": {
     "os": "^0.1.1"

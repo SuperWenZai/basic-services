@@ -1,0 +1,61 @@
+[2020-03-24T16:22:12.019] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /
+request client ip:  ::1
+request query:  {}
+response time: 36
+response status: 200
+response body: 
+"<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>hello koa2 ejs</title>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link href=\"css/style.css\" rel=\"stylesheet\">\n  </head>\n  <body>\n    <h1>Koa2 request POST</h1>\n    <h2>hello koa2 ejs</h2>\n    <form method=\"POST\" action=\"/api/users/registerUser\">\n        <p>userName</p>\n        <input name=\"userName\" /><br/>\n        <p>age</p>\n        <input name=\"age\" /><br/>\n        <button type=\"submit\">submit</button>\n    </form>\n  </body>\n</html>"
+*************** response log end ***************
+
+[2020-03-24T16:22:12.092] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /css/style.css
+request client ip:  ::1
+request query:  {}
+response time: 1
+response status: 404
+response body: 
+undefined
+*************** response log end ***************
+
+[2020-03-24T16:22:20.705] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/users/registerUser
+request client ip:  ::1
+request body: 
+{"userName":"arwenfang","age":"23"}
+response time: 1
+response status: 200
+response body: 
+{"userName":"arwenfang","age":"23"}
+*************** response log end ***************
+
+[2020-03-24T16:28:02.614] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /
+request client ip:  ::1
+request query:  {}
+response time: 21
+response status: 200
+response body: 
+"<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>hello koa2 ejs</title>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link href=\"css/style.css\" rel=\"stylesheet\">\n  </head>\n  <body>\n    <h1>Koa2 request POST</h1>\n    <h2>hello koa2 ejs</h2>\n    <form method=\"POST\" action=\"/api/users/registerUser\">\n        <p>userName</p>\n        <input name=\"userName\" /><br/>\n        <p>age</p>\n        <input name=\"age\" /><br/>\n        <button type=\"submit\">submit</button>\n    </form>\n  </body>\n</html>"
+*************** response log end ***************
+
+[2020-03-24T16:28:02.659] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /css/style.css
+request client ip:  ::1
+request query:  {}
+response time: 1
+response status: 404
+response body: 
+undefined
+*************** response log end ***************
+

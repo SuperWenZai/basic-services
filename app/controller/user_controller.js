@@ -1,8 +1,8 @@
 // 获取用户信息
 exports.getUser = async (ctx) => {
   ctx.body = {
-    username: '阿，希爸',
-    age: 30
+    username: 'arwenfang',
+    age: 23
   };
 };
 
