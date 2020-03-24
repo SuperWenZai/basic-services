@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Koa2 request POST</h1>
+    <h2><%= title %></h2>
+    <form method="POST" action="/api/users/registerUser">
+        <p>userName</p>
+        <input name="userName" /><br/>
+        <p>age</p>
+        <input name="age" /><br/>
+        <button type="submit">submit</button>
+    </form>
+  </body>
+</html>
