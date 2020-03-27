@@ -8,7 +8,7 @@ const api = require('./route/api');
 const config = require('./config');
 const IPv4Util = require('./util/IPv4_util');
 const responseFormatter = require('./middlewares/response_formatter');
-const logUtil = require('./util/log_util');
+const logger = require('./middlewares/logger');
 
 const app = new Koa();
 const port = config.port || '3000';
@@ -16,7 +16,7 @@ const port = config.port || '3000';
 app.use(bodyparser());
 
 // 配置静态web服务的中间件
-app.use(static(path.join(__dirname, './static')));
+app.use(static(path.join(__dirname, '/')));
 
 app.use(views(path.join(__dirname, './view'), {
   extension: 'ejs'
@@ -29,26 +29,7 @@ app.use(views(path.join(__dirname, './view'), {
 app.use(responseFormatter('^/api'));
 
 // logger
-app.use(async (ctx, next) => {
-  //响应开始时间
-  const start = new Date();
-  //响应间隔时间
-  let ms;
-  try {
-    //开始进入到下一个中间件
-    await next();
-
-    ms = new Date() - start;
-    //记录响应日志
-    logUtil.logResponse(ctx, ms);
-
-  } catch (error) {
-    
-    ms = new Date() - start;
-    //记录异常日志
-    logUtil.logError(ctx, error, ms);
-  }
-});
+app.use(logger);
 
 router.use('/api', api.routes(), api.allowedMethods());
 

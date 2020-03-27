@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development nodemon main.js",
-    "confirmLog": "cross-env nodemon util/logPath_util.js"
+    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/nodemon main.js",
+    "confirmLog": "cross-env ./node_modules/.bin/nodemon util/logPath_util.js"
   },
   "keywords": [],
   "author": "arwenfang",
@@ -19,10 +19,11 @@
     "koa-router": "^8.0.8",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.1",
-    "log4js": "^6.1.2"
+    "log4js": "^6.1.2",
+    "os": "^0.1.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "os": "^0.1.1"
+    "nodemon": "^2.0.2"
   }
 }

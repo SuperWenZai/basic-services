@@ -1,6 +1,14 @@
 const router = require('koa-router')();
-const user_router = require('./user_router');
+const path = require('path');
+const routes_list = require('./routes');
 
-router.use('/users',user_router.routes(),user_router.allowedMethods());
+const controller_dir = '/app/controller'; //配置默认目录
+
+for (var item of routes_list.routes) {
+  console.log(`register URL mapping: http://localhost:3000/api/${item.method}${item.url}`);
+  let mapping = require(path.join(__dirname, `../..${controller_dir + item.url}`));
+  let method = item.method.toLowerCase();
+  router[method](item.url, mapping[item.interfaceName]);
+}
 
 module.exports = router;
