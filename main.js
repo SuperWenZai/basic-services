@@ -4,14 +4,44 @@ const bodyparser = require('koa-bodyparser');
 const views = require('koa-views');
 const path = require('path');
 const static = require('koa-static');
+const {
+  connect,
+  initSchemas
+} = require('./database/init')
 const api = require('./route/api');
 const config = require('./config');
 const IPv4Util = require('./util/IPv4_util');
 const responseFormatter = require('./middlewares/response_formatter');
 const logger = require('./middlewares/logger');
 
+const mongoose = require('mongoose');
+
 const app = new Koa();
 const port = config.port || '3000';
+
+//连接数据库
+;
+(async () => {
+  await connect()
+  initSchemas()
+
+  const User = mongoose.model('User');
+  let oneUser = new User({
+    userName: 'arwenfang',
+    passWord: '123456'
+  });
+
+  oneUser.save().then(() => {
+    console.log('插入成功!');
+  }).catch((error)=>{
+    console.log('插入失败:',error)
+  });
+
+  let user = await User.findOne({}).exec();
+  console.log('------------user------------')
+  console.log(user);
+  console.log('------------user------------')
+})()
 
 app.use(bodyparser());
 
