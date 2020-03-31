@@ -18,6 +18,12 @@ exports.routes = [
     interfaceName: 'info',
     method: 'GET'
   },
+  {
+    url: '/base/login',
+    systemName: 'base',
+    interfaceName: 'login',
+    method: 'POST'
+  },
   // base接口 结束
 
   // product接口 开始

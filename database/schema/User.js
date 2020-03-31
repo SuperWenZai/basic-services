@@ -9,7 +9,7 @@ const userSchema = new Schema({
     unique: true,
     type: String
   },
-  passWord: String,
+  passWord: Boolean,
   createAt: {
     type: Date,
     default: Date.now()
